@@ -7,7 +7,7 @@ const command = document.getElementById('command');
 
 let choixOrdi=["shi","fu","mi"];
 
-let scoreIa = 0;
+let scoreIA = 0;
 let scorePlayer = 0;
 
 function resultRandom () {
@@ -26,7 +26,7 @@ shi.addEventListener('click', function() {
             console.log("You Win!");
         }
         else {
-            document.getElementById('score-ia').innerHTML = ++scoreIa;;
+            document.getElementById('score-ia').innerHTML = ++scoreIA;;
             console.log(resultRand);
             console.log("You Loose!");
         }
@@ -34,7 +34,7 @@ shi.addEventListener('click', function() {
 fu.addEventListener('click', function() {
     let resultRand = resultRandom();
     if (resultRand=="shi"){
-        document.getElementById('score-ia').innerHTML = ++scoreIa;
+        document.getElementById('score-ia').innerHTML = ++scoreIA;
         console.log(resultRand);
         console.log("You Loose!"); 
     }
@@ -56,7 +56,7 @@ mi.addEventListener('click', function() {
         console.log("You Win!"); 
     }
     else if (resultRand=="fu"){
-        document.getElementById('score-ia').innerHTML = ++scoreIa;
+        document.getElementById('score-ia').innerHTML = ++scoreIA;
         console.log(resultRand);
         console.log("You Loose!");
     }
