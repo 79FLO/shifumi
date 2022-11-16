@@ -4,14 +4,16 @@ const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
-let choixOrdi=["shi","fu","mi"];
 
+let choixOrdi=["shi","fu","mi"];
 
 let scoreIa = 0;
 let scorePlayer = 0;
+
 function resultRandom () {
     return choixOrdi[Math.floor(Math.random() * choixOrdi.length)]
 }
+
 shi.addEventListener('click', function() {
     let resultRand = resultRandom();
         if (resultRand=="shi"){
