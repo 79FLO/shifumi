@@ -4,32 +4,63 @@ const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
-let choixOrdi=["Shi","Fu","Mi"];
+let choixOrdi=["shi","fu","mi"];
 
+
+let scoreIa = 0;
+let scorePlayer = 0;
 function resultRandom () {
     return choixOrdi[Math.floor(Math.random() * choixOrdi.length)]
 }
-let scoreIa = 0;
-let scorePlayer = 0;
-
 shi.addEventListener('click', function() {
-        if (resultRandom()=="Shi"){
-            console.log(resultRandom());
+    let resultRand = resultRandom();
+        if (resultRand=="shi"){
+            console.log(resultRand);
             console.log("Egal!"); 
         }
-        else if (resultRandom()=="Fu"){
+        else if (resultRand=="fu"){
             document.getElementById('score-player').innerHTML = ++scorePlayer;
-            console.log(resultRandom());
+            console.log(resultRand);
             console.log("You Win!");
         }
         else {
             document.getElementById('score-ia').innerHTML = ++scoreIa;;
-            console.log(resultRandom());
+            console.log(resultRand);
             console.log("You Loose!");
         }
     });
-fu.addEventListener('click', () => console.log('fu'));
-mi.addEventListener('click', () => console.log('mi'));
+fu.addEventListener('click', function() {
+    let resultRand = resultRandom();
+    if (resultRand=="shi"){
+        document.getElementById('score-ia').innerHTML = ++scoreIa;
+        console.log(resultRand);
+        console.log("You Loose!"); 
+    }
+    else if (resultRand=="fu"){
+        console.log(resultRand);
+        console.log("Egal!");
+    }
+    else {
+        document.getElementById('score-player').innerHTML = ++scorePlayer;
+        console.log(resultRand);
+        console.log("You Win!");
+    }
+});
+mi.addEventListener('click', function() {
+    let resultRand = resultRandom();
+    if (resultRand=="shi"){
+        document.getElementById('score-player').innerHTML = ++scorePlayer;
+        console.log(resultRand);
+        console.log("You Win!"); 
+    }
+    else if (resultRand=="fu"){
+        document.getElementById('score-ia').innerHTML = ++scoreIa;
+        console.log(resultRand);
+        console.log("You Loose!");
+    }
+    else {
+        console.log(resultRand);
+        console.log("Egal!");
+    }
+});
 
-
-// Pour le reste, a vous de jouer */
